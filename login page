@@ -1,0 +1,146 @@
+// imports
+import 'package:flutter/material.dart';
+
+// main function
+void main() => runApp(MyApp());
+
+// Stateless widget returning material app
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            color: Colors.white,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  color: Colors.white,
+                  padding: EdgeInsets.fromLTRB(30.0, 90.0, 0.0, 0.0),
+                  child: Text('HELLO', style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold))
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(30.0, 150.0, 0.0, 0.0),
+                  child: Text('THERE', style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold))
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(240.0, 150.0, 0.0, 0.0),
+                  child: Text(' .', style: TextStyle(fontSize: 70, fontWeight: FontWeight.bold, color: Colors.green))
+                ),
+              ],
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: Column(
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'E-MAIL ID',
+                    labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green)
+                    )
+                  )
+                ),
+                SizedBox(height: 20),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'PASSWORD',
+                    labelStyle: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.green)
+                    ),
+                  ),
+                  obscureText: true,
+                ),
+                SizedBox(height: 20),
+                Container(
+                  alignment: Alignment(1, 0),
+                  padding: EdgeInsets.fromLTRB(15, 0, 20, 0),
+                  child: InkWell(
+                    child: Text('Forgot Password', style: TextStyle(color: Colors.green,
+                                                                    fontWeight: FontWeight.bold,
+                                                                    decoration: TextDecoration.underline)),
+                  )
+                )
+              ]
+            )
+          ),
+          SizedBox(height: 40),
+          Container(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            height: 40,
+            child: Material(
+              borderRadius: BorderRadius.circular(20),
+              shadowColor: Colors.greenAccent,
+              color: Colors.green,
+              elevation: 10,
+              child: GestureDetector(
+                onTap: () {},
+                child: Center(
+                  child: Text('LOGIN', style: TextStyle(fontWeight: FontWeight.bold,
+                                                       color: Colors.white)),
+                )
+              )
+            )
+          ),
+          SizedBox(height: 20),
+          Container(
+            padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            height: 40,
+            color: Colors.transparent,
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.black,
+                  style: BorderStyle.solid,
+                  width: 1,
+                ),
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text('Log in with Facebook', style: TextStyle(fontWeight: FontWeight.bold)),
+              ),
+            )
+          ),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('New to Spotify?'),
+              Text('Register', style: TextStyle(color: Colors.green,
+                                                fontWeight: FontWeight.bold,
+                                                decoration: TextDecoration.underline))
+            ]
+          )
+        ]
+      )
+    );
+  }
+}
